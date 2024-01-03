@@ -51,6 +51,7 @@ kotlin {
       testTask {
         // We cannot load big text files
         enabled = false
+        filter.isFailOnNoMatchingTests = false
       }
     }
   }

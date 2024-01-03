@@ -135,3 +135,6 @@ Desktop.ini
 *~
 .directory
 .merge_file*
+
+# Kotlin Multiplatform
+karma.config.d/

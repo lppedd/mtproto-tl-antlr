@@ -27,16 +27,25 @@ class MTProtoTLParserTest {
   @Test
   fun parseExampleSchema() {
     // https://core.telegram.org/mtproto/TL#example
-    val text = "schema-example.txt".loadText()
+    val text = "schema-example.tl".loadText()
     val parser = parserForText(text)
     val schema = parser.tlSchema()
     Trees.toStringTree(schema, parser)
   }
 
   @Test
-  fun parseSchema158() {
+  fun parseSchemaLayer158() {
     // https://core.telegram.org/schema
-    val text = "schema-158.txt".loadText()
+    val text = "schema-158.tl".loadText()
+    val parser = parserForText(text)
+    val schema = parser.tlSchema()
+    Trees.toStringTree(schema, parser)
+  }
+
+  @Test
+  fun parseSchemaLayer170() {
+    // https://core.telegram.org/schema
+    val text = "schema-170.tl".loadText()
     val parser = parserForText(text)
     val schema = parser.tlSchema()
     Trees.toStringTree(schema, parser)

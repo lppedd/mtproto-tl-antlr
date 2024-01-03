@@ -169,7 +169,7 @@ messageActionRequestedPeer#fe77345d button_id:int peer:Peer = MessageAction;
 messageActionSetChatWallPaper#bc44a927 wallpaper:WallPaper = MessageAction;
 messageActionSetSameChatWallPaper#c0787d6d wallpaper:WallPaper = MessageAction;
 
-dialog#d58a08c6 flags:# pinned:flags.2?true unread_mark:flags.3?true view_forum_as_messages:flags.6?true peer:Peer top_message:int read_inbox_max_id:int read_outbox_max_id:int unread_count:int unread_mentions_count:int unread_reactions_count:int notify_settings:PeerNotifySettings pts:flags.0?int draft:flags.1?DraftMessage folder_id:flags.4?int ttl_period:flags.5?int = Dialog;
+dialog#d58a08c6 flags:# pinned:flags.2?true unread_mark:flags.3?true peer:Peer top_message:int read_inbox_max_id:int read_outbox_max_id:int unread_count:int unread_mentions_count:int unread_reactions_count:int notify_settings:PeerNotifySettings pts:flags.0?int draft:flags.1?DraftMessage folder_id:flags.4?int ttl_period:flags.5?int = Dialog;
 dialogFolder#71bd134c flags:# pinned:flags.2?true folder:Folder peer:Peer top_message:int unread_muted_peers_count:int unread_unmuted_peers_count:int unread_muted_messages_count:int unread_unmuted_messages_count:int = Dialog;
 
 photoEmpty#2331b22d id:long = Photo;
@@ -559,7 +559,7 @@ chatInviteExported#ab4a819 flags:# revoked:flags.0?true permanent:flags.5?true r
 chatInvitePublicJoinRequests#ed107ab7 = ExportedChatInvite;
 
 chatInviteAlready#5a686d7c chat:Chat = ChatInvite;
-chatInvite#300c44c1 flags:# channel:flags.0?true broadcast:flags.1?true public:flags.2?true megagroup:flags.3?true request_needed:flags.6?true verified:flags.7?true scam:flags.8?true fake:flags.9?true title:string about:flags.5?string photo:Photo participants_count:int participants:flags.4?Vector<User> = ChatInvite;
+chatInvite#300c44c1 flags:# channel:flags.0?true broadcast:flags.1?true public:flags.2?true megagroup:flags.3?true request_needed:flags.6?true title:string about:flags.5?string photo:Photo participants_count:int participants:flags.4?Vector<User> = ChatInvite;
 chatInvitePeek#61695cb0 chat:Chat expires:int = ChatInvite;
 
 inputStickerSetEmpty#ffb62b95 = InputStickerSet;
@@ -623,6 +623,7 @@ messageEntityPhone#9b69e34b offset:int length:int = MessageEntity;
 messageEntityCashtag#4c4e743f offset:int length:int = MessageEntity;
 messageEntityUnderline#9c4e7e8b offset:int length:int = MessageEntity;
 messageEntityStrike#bf0693d4 offset:int length:int = MessageEntity;
+messageEntityBlockquote#20df5d0 offset:int length:int = MessageEntity;
 messageEntityBankCard#761e6af4 offset:int length:int = MessageEntity;
 messageEntitySpoiler#32ca960f offset:int length:int = MessageEntity;
 messageEntityCustomEmoji#c8cf05f8 offset:int length:int document_id:long = MessageEntity;
@@ -1347,7 +1348,7 @@ availableReaction#c077ec01 flags:# inactive:flags.0?true premium:flags.2?true re
 messages.availableReactionsNotModified#9f071957 = messages.AvailableReactions;
 messages.availableReactions#768e3aad hash:int reactions:Vector<AvailableReaction> = messages.AvailableReactions;
 
-messagePeerReaction#8c79b63c flags:# big:flags.0?true unread:flags.1?true my:flags.2?true peer_id:Peer date:int reaction:Reaction = MessagePeerReaction;
+messagePeerReaction#8c79b63c flags:# big:flags.0?true unread:flags.1?true peer_id:Peer date:int reaction:Reaction = MessagePeerReaction;
 
 groupCallStreamChannel#80eb48af channel:int scale:int last_timestamp_ms:long = GroupCallStreamChannel;
 
@@ -1737,6 +1738,7 @@ messages.setInlineGameScore#15ad9f64 flags:# edit_message:flags.0?true force:fla
 messages.getGameHighScores#e822649d peer:InputPeer id:int user_id:InputUser = messages.HighScores;
 messages.getInlineGameHighScores#f635e1b id:InputBotInlineMessageID user_id:InputUser = messages.HighScores;
 messages.getCommonChats#e40ca104 user_id:InputUser max_id:long limit:int = messages.Chats;
+messages.getAllChats#875f74be except_ids:Vector<long> = messages.Chats;
 messages.getWebPage#32ca8f91 url:string hash:int = WebPage;
 messages.toggleDialogPin#a731e257 flags:# pinned:flags.0?true peer:InputDialogPeer = Bool;
 messages.reorderPinnedDialogs#3b1adf37 flags:# force:flags.0?true folder_id:int order:Vector<InputDialogPeer> = Bool;
@@ -2042,3 +2044,5 @@ chatlists.joinChatlistUpdates#e089f8f5 chatlist:InputChatlist peers:Vector<Input
 chatlists.hideChatlistUpdates#66e486fb chatlist:InputChatlist = Bool;
 chatlists.getLeaveChatlistSuggestions#fdbcd714 chatlist:InputChatlist = Vector<Peer>;
 chatlists.leaveChatlist#74fae13a chatlist:InputChatlist peers:Vector<InputPeer> = Updates;
+
+// LAYER 158
