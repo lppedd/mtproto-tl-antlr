@@ -1,4 +1,6 @@
 /**
+ * See https://core.telegram.org/mtproto/TL-formal
+ *
  * @author Edoardo Luppi
  */
 parser grammar MTProtoTLParser;
@@ -7,7 +9,7 @@ options {
   tokenVocab = MTProtoTLLexer;
 }
 
-tlProgram
+tlSchema
     : constrDeclarations (Functions funDeclarations | Types constrDeclarations)* EOF
     ;
 

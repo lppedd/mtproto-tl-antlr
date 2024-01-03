@@ -7,6 +7,7 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 plugins {
   alias(libs.plugins.kotlin.multiplatform)
   alias(libs.plugins.antlr.kotlin)
+  alias(libs.plugins.kotlinx.resources)
 }
 
 kotlin {
@@ -48,12 +49,8 @@ kotlin {
 
     browser {
       testTask {
-        useKarma {
-          useSourceMapSupport()
-          useChromeHeadless()
-        }
-
-        filter.isFailOnNoMatchingTests = true
+        // We cannot load big text files
+        enabled = false
       }
     }
   }

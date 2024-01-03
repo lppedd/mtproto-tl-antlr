@@ -1,4 +1,6 @@
 /**
+ * See https://core.telegram.org/mtproto/TL-formal
+ *
  * @author Edoardo Luppi
  */
 lexer grammar MTProtoTLLexer;
@@ -11,7 +13,7 @@ LcIdent:          [a-z][a-zA-Z0-9_]*;
 // ident-char ::= letter | digit | underscore
 UcIdent:          [A-Z][a-zA-Z0-9_]*;
 
-// Example: #3fedd339
+// Represents the 32-bit name of a combinator. Example: #3fedd339
 // The official grammar uses the {1,8} quantifier, but ANTLR does not support it
 HexConst:         '#' [0-9a-f]+;
 
@@ -50,6 +52,6 @@ RAngle:           '>';
 Equals:           '=';
 
 // We do not care about comments, delimiters, and whitespaces
-Comment:          ('//' .+? '\n'? | '/*' .+? '*/')  -> skip;
+Comment:          ('//' ~[\r\n]* | '/*' .+? '*/')   -> skip;
 Delimiter:        '===' [0-9]+ '==='                -> skip;
 WS:               [ \r\n\t]+                        -> skip;
