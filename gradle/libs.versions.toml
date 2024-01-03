@@ -1,0 +1,13 @@
+[versions]
+kotlin = "1.9.22"
+kotlinx-resources = "0.4.0"
+antlr4-kotlin = "0.1.0-RC14"
+
+[libraries]
+kotlinx-resources = { group = "com.goncalossilva", name = "resources", version.ref = "kotlinx-resources" }
+antlr4-kotlin = { group = "com.strumenta", name = "antlr-kotlin-runtime", version.ref = "antlr4-kotlin" }
+
+[plugins]
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlinx-resources = { id = "com.goncalossilva.resources", version.ref = "kotlinx-resources" }
+antlr-kotlin = { id = "com.strumenta.antlr-kotlin", version.ref = "antlr4-kotlin" }
