@@ -2,23 +2,13 @@ package com.github.lppedd.mtproto.tl.parser
 
 import com.github.lppedd.mtproto.tl.parser.ext.assertEof
 import com.github.lppedd.mtproto.tl.parser.ext.assertNextToken
-import com.github.lppedd.mtproto.tl.parser.generated.MTProtoTLLexer
 import com.github.lppedd.mtproto.tl.parser.generated.MTProtoTLLexer.Tokens.*
-import com.github.lppedd.mtproto.tl.parser.util.ThrowingErrorListener
-import org.antlr.v4.kotlinruntime.CharStreams
 import kotlin.test.Test
 
 /**
  * @author Edoardo Luppi
  */
-class MTProtoTLLexerTest {
-  private fun lexerForText(text: String): MTProtoTLLexer {
-    val lexer = MTProtoTLLexer(CharStreams.fromString(text))
-    lexer.removeErrorListeners()
-    lexer.addErrorListener(ThrowingErrorListener)
-    return lexer
-  }
-
+class MTProtoTLLexerTest : MTProtoTLBaseTest() {
   @Test
   fun lexStringTypeCombinator() {
     val lexer = lexerForText("string ? = String;")
