@@ -15,4 +15,4 @@ Tests can be found - and should be added - under [parser/src/commonTest](parser/
 
 [1]: https://github.com/lppedd/mtproto-tl-antlr/workflows/Build/badge.svg
 [2]: https://github.com/lppedd/mtproto-tl-antlr/actions
-[3]: https://github.com/lppedd/mtproto-tl-antlr
+[3]: https://github.com/Strumenta/antlr-kotlin
