@@ -129,7 +129,7 @@ tasks {
     outputDirectory = layout.buildDirectory.dir(outDir).get().asFile
   }
 
-  withType<KotlinCompile<*>> {
+  withType<KotlinCompile<*>>().configureEach {
     dependsOn(generateKotlinGrammarSource)
   }
 }

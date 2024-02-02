@@ -1,7 +1,7 @@
 [versions]
 kotlin = "1.9.22"
 kotlinx-resources = "0.4.0"
-antlr4-kotlin = "0.1.0-RC14"
+antlr4-kotlin = "0.1.3"
 
 [libraries]
 kotlinx-resources = { group = "com.goncalossilva", name = "resources", version.ref = "kotlinx-resources" }
